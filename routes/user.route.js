@@ -8,7 +8,7 @@ let router = express.Router();
 router.get("/", controller.index);
 
 router.get("/cookie", (req, res) => {
-    res.cookie("user-id", 12345);
+    res.cookie("user_id", 12345);
     res.send("Hello");
 });
 

@@ -12,7 +12,7 @@ let port = 3000;
 let app = express();
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.use(cookieParser());
+app.use(cookieParser("AAAA"));
 
 app.set('views', './views');
 app.set('view engine', 'pug');

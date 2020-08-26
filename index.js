@@ -1,9 +1,12 @@
+require('dotenv').config();
+
 let express = require('express');
 let bodyParser = require("body-parser");
 let cookieParser = require("cookie-parser");
 
 let userRoute = require('./routes/user.route');
 let authRoute = require("./routes/auth.route");
+let productRoute = require("./routes/product.route");
 
 let authMiddleware = require("./middlewares/auth.middleware");
 
@@ -12,7 +15,7 @@ let port = 3000;
 let app = express();
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.use(cookieParser("AAAA"));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -28,6 +31,7 @@ app.get("/", function(req, res) {
 // Routes
 app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
+app.use('/products', productRoute);
 
 // Listen port
 app.listen(port, () => {

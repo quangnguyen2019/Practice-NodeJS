@@ -6,7 +6,7 @@ block content
     - page = parseInt(page);
 
     nav(aria-label='Page navigation example')
-        ul.pagination.justify-content-end
+        ul.pagination.justify-content-center
             if page > 1
                 li.page-item
                     a.page-link(href='/products?page=' + (page - 1), tabindex='-1') Previous

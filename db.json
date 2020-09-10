@@ -730,5 +730,26 @@
       "description": "odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla",
       "price": 830425
     }
+  ],
+  "sessions": [
+    {
+      "id": "DDCfgxrM5",
+      "cart": {
+        "878c503b-e98f-4451-9cec-0cd578821de9": 2,
+        "d4fe16d3-b967-4333-8ad7-2737b1b44a95": 2,
+        "81f89a6f-c912-42c0-83b1-8053a9016266": 1,
+        "0c173b67-e4e8-4de3-a165-6bb426066be7": 1,
+        "549d9ce1-6435-4ca4-899b-5263d262754e": 1,
+        "e492e39b-40f5-489e-8376-4cd4632af1f6": 1,
+        "af60738e-6174-4557-b50e-19ece6fc553f": 1,
+        "cb971107-d05b-431c-8070-72d04cf505fa": 1
+      }
+    },
+    {
+      "id": "I73Nwl80w",
+      "cart": {
+        "878c503b-e98f-4451-9cec-0cd578821de9": 5
+      }
+    }
   ]
 }

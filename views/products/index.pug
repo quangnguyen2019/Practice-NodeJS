@@ -26,11 +26,12 @@ block content
             li.page-item
                 a.page-link(href='/products?page=' + (page + 1)) Next
 
-    each item in products
-        .card(style='width: 16.3rem; height: 25rem;' class='float-left m-2')
-            img.card-img-top(src= item.image, alt='Product Image')
+    each product in products
+        .card(style='width: 16.3rem; height: 28rem;' class='float-left m-2')
+            img.card-img-top(src= product.image, alt='Product Image')
             .card-body
-                h5.card-title= item.name
-                p.card-text= item.description
+                h5.card-title= product.name
+                p.card-text= product.description
+                a.btn.btn-primary(href="/cart/add/" + product.id) Add To Cart
 
     

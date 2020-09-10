@@ -17,7 +17,7 @@ html
                     li.nav-item
                         a.nav-link(href='/products') Products
                     li.nav-item
-                        a.nav-link(href='#') Cart
+                        a.nav-link(href='#') Cart (#{numProducts ? numProducts : 0})
             if user
                 p= user.name    
 

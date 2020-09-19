@@ -3,11 +3,15 @@ require('dotenv').config();
 let express = require('express');
 let bodyParser = require("body-parser");
 let cookieParser = require("cookie-parser");
+let mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URL);
 
 let userRoute = require('./routes/user.route');
 let authRoute = require("./routes/auth.route");
 let productRoute = require("./routes/product.route");
 let cartRoute = require("./routes/cart.route");
+let transferRoute = require("./routes/transfer.route");
 
 let authMiddleware = require("./middlewares/auth.middleware");
 let sessionMiddleware = require("./middlewares/session.middleware");
@@ -36,6 +40,7 @@ app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
+app.use('/transfer', authMiddleware.requireAuth, transferRoute);
 
 // Listen port
 app.listen(port, () => {

@@ -5,7 +5,7 @@ let productSchema = mongoose.Schema({
     image: String,
     description: String,
     price: Number
-});
+}, { versionKey: '_somethingElse' });
 
 let Product = mongoose.model("Product", productSchema, "products");
 

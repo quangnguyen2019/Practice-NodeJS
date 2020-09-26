@@ -1,4 +1,5 @@
-let db = require("../db");
+// let db = require("../db");
+let User = require("../models/user.model");
 
 module.exports.requireAuth = (req, res, next) => {
     if (!req.signedCookies.user_id) {
@@ -6,9 +7,13 @@ module.exports.requireAuth = (req, res, next) => {
         return;
     }
 
-    let user = db.get("users").find({ 
-        id: req.signedCookies.user_id 
-    }).value();
+    // let user = db.get("users").find({ 
+    //     id: req.signedCookies.user_id 
+    // }).value();
+
+    let user = User.findOne({ 
+        _id: req.signedCookies.user_id 
+    });
 
     if (!user) {
         res.redirect("/auth/login");
